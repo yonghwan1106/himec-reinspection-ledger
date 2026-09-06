@@ -6,7 +6,7 @@ import { DISCLAIMER, FORM50, LEDGER } from "@/lib/data";
 import { BadgeCheck, FileWarning, PenTool, Printer } from "lucide-react";
 
 export default function Form50Page() {
-  const [openCell, setOpenCell] = useState<string | null>("발생 원인 (원문 인용)");
+  const [openCell, setOpenCell] = useState<string | null>("불합격 사유 — 원문 인용");
   const [signed, setSigned] = useState(false);
 
   const maxN = Math.max(...FORM50.topTypes.map((t) => t.n));
@@ -17,9 +17,11 @@ export default function Form50Page() {
       title="별지 제50호 초안 — 대장에서 뽑아 낸 부산물"
       lead={
         <>
-          최종보고서 작성서식 「우수시공 및 실패시공 사례」다. 준공 2주 전에 기억으로 채우던 칸이,
+          최종보고서 작성서식 아홉 종(별지 제43~51호)의 여덟 번째 칸 「우수시공 및 실패시공
+          사례」다. 용역 만료 뒤 열나흘 안에 되살릴 수 있는 범위로 채우던 칸이,
           <b> 사건 직후에 확정된 대장 행에서 초안으로 선다.</b> 칸을 누르면 그 칸이 어느 층에서
           왔는지와 근거 대장 행·원본 쪽이 열린다. 확정과 서명은 사람이 한다.
+          <b> 서식의 칸 배치는 예시이며 서식 원본의 칸 구성에 맞추어 확정한다.</b>
         </>
       }
     >
@@ -191,7 +193,7 @@ export default function Form50Page() {
             right={<LayerTag layer="ai" text="AI 정규화 결과의 집계" size="xs" />}
           >
             <p className="mb-2.5 text-[12px] leading-relaxed text-[var(--ink-2)]">
-              기억나는 두세 건이 아니라 누적 건수 상위 항목에서 초안이 선다. 이 정수는{" "}
+              열나흘 안에 되살릴 수 있는 범위가 아니라 누적 건수 상위 항목에서 초안이 선다. 이 정수는{" "}
               <b>아무도 세어 본 적 없는 값</b>이며, HDX가 목표를 걸지 않은 새 지표다.
             </p>
             <ul className="space-y-2">

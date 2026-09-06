@@ -44,7 +44,7 @@ const NAV = [
     href: "/metrics",
     n: "4",
     label: "지표 · 검증 · 로드맵",
-    sub: "판독률 · κ · 오결합률",
+    sub: "정확도 · κ_H − κ_S · 오결합률",
     icon: GaugeCircle,
   },
 ];
@@ -65,7 +65,7 @@ export default function Chrome({ children }: { children: React.ReactNode }) {
           </span>
           <span className="ml-auto inline-flex items-center gap-1.5 rounded-sm border border-[#b98a3a] bg-[#3a2f16] px-2 py-[3px] text-[11.5px] font-semibold text-[#f0c975]">
             <TriangleAlert size={13} strokeWidth={2.2} />
-            가상 데이터 — 실제 기업·현장·프로젝트가 아닙니다
+            가상 데이터 · 표시 수치는 예시값 — 실제 기업·현장·프로젝트가 아닙니다
           </span>
         </div>
       </header>
@@ -126,11 +126,11 @@ export default function Chrome({ children }: { children: React.ReactNode }) {
             </p>
             <p className="mt-1.5 flex items-start gap-1.5 text-[11.5px] leading-snug text-[var(--ink-2)]">
               <span className="mt-[3px] inline-block h-2.5 w-2.5 shrink-0 rounded-[2px] bg-[var(--ocr)]" />
-              인식층 — 확률적, 판독률로 잰다
+              인식층 — 확률적, 필드 단위 정확도로 잰다
             </p>
             <p className="mt-1 flex items-start gap-1.5 text-[11.5px] leading-snug text-[var(--ink-2)]">
               <span className="mt-[3px] inline-block h-2.5 w-2.5 shrink-0 rounded-[2px] bg-[var(--ai)]" />
-              판단층(AI) — 감리원 2인 κ가 상한
+              판단층(AI) — κ_H를 먼저 재고 κ_H − κ_S로
             </p>
             <p className="mt-1 flex items-start gap-1.5 text-[11.5px] leading-snug text-[var(--ink-2)]">
               <span className="mt-[3px] inline-block h-2.5 w-2.5 shrink-0 rounded-[2px] bg-[var(--det)]" />
@@ -145,7 +145,9 @@ export default function Chrome({ children }: { children: React.ReactNode }) {
           <p className="mt-4 px-2 text-[11px] leading-relaxed text-[var(--ink-3)]">
             원본 스캔에는 쓰기 경로를 두지 않았습니다.
             <br />
-            최종 확정과 서명은 책임건설사업관리기술인입니다.
+            대장 행 확인·확정은 분야별 건설사업관리기술인,
+            <br />
+            별지 제50호 최종 확정·서명은 책임건설사업관리기술인입니다.
           </p>
         </nav>
 

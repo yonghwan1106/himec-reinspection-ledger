@@ -129,7 +129,7 @@ export default function LedgerPage() {
                       <p className="mt-1 flex flex-wrap items-center gap-1">
                         <LayerTag layer="ai" text={r.defectType} size="xs" />
                         <span className="mono text-[10px] text-[var(--ink-3)]">
-                          κ후보 {r.defectConf.toFixed(2)}
+                          유사도 {r.defectConf.toFixed(2)}
                         </span>
                       </p>
                     </td>
@@ -235,12 +235,12 @@ export default function LedgerPage() {
               ) : (
                 <PenTool size={13} strokeWidth={2.2} />
               )}
-              {isSigned ? "확정·서명 완료" : "책임건설사업관리기술인 확정·서명"}
+              {isSigned ? "확인·확정 완료" : "분야별 건설사업관리기술인 확인·확정"}
             </button>
 
             <span className="text-[11.5px] text-[var(--ink-3)]">
               {isSigned
-                ? `${row.signedBy ?? "책임건설사업관리기술인(기계)"} · ${row.signedAt ?? "확정 시각 기록됨"}`
+                ? `${row.signedBy ?? "분야별 건설사업관리기술인(기계)"} · ${row.signedAt ?? "확정 시각 기록됨"}`
                 : "서명 전에는 별지 제50호 초안에 인용되지 않는다"}
             </span>
           </div>
