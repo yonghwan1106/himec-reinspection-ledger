@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* 지면 — 서류철의 결 */
+  --paper: #f3f1ea;
+  --card: #ffffff;
+  --ink: #1a1a1c;
+  --ink-2: #46484d;
+  --ink-3: #787c83;
+  --rule: #dfdcd2;
+  --rule-2: #c7c3b6;
+
+  /* 세 층의 경계 — 이 색 구분이 제안의 핵심이다 */
+  --ocr: #96620d; /* 인식층 : 확률적 */
+  --ocr-bg: #fbf1dd;
+  --ai: #6b46a8; /* 판단층 : 판단 */
+  --ai-bg: #f2edfa;
+  --det: #0f6b66; /* 결정층 : 결정론 */
+  --det-bg: #e5f2f0;
+  --sign: #1f3a5f; /* 사람 : 법적 판정 행위 */
+  --sign-bg: #e9eff6;
+
+  /* 붉은 글씨 (재) — 이 제안의 표지 */
+  --stamp: #b3261e;
+  --stamp-bg: #fbeceb;
+
+  --unknown: #8a6d3b;
+  --unknown-bg: #f6efe1;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink-2);
+  --color-ink3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule2: var(--rule-2);
+  --color-ocr: var(--ocr);
+  --color-ocrbg: var(--ocr-bg);
+  --color-ai: var(--ai);
+  --color-aibg: var(--ai-bg);
+  --color-det: var(--det);
+  --color-detbg: var(--det-bg);
+  --color-sign: var(--sign);
+  --color-signbg: var(--sign-bg);
+  --color-stamp: var(--stamp);
+  --color-stampbg: var(--stamp-bg);
+  --color-unknown: var(--unknown);
+  --color-unknownbg: var(--unknown-bg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo",
+    "Malgun Gothic", "맑은 고딕", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.01em;
+}
+
+.mono {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, "D2Coding",
+    "Courier New", monospace;
+  font-feature-settings: normal;
+  letter-spacing: 0;
+}
+
+.tabnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 스캔 원본의 결 — 종이 질감을 CSS로만 낸다 (외부 이미지 없음) */
+.scanpaper {
+  background-color: #fdfcf8;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(26, 26, 28, 0.022) 0px,
+    rgba(26, 26, 28, 0.022) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.gridpaper {
+  background-image: linear-gradient(
+      to right,
+      rgba(26, 26, 28, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(26, 26, 28, 0.04) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* 원본에 쓰기 경로가 없다는 것을 커서로도 표시한다 */
+.readonly {
+  cursor: not-allowed;
+  user-select: none;
 }
