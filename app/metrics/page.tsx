@@ -98,7 +98,7 @@ export default function MetricsPage() {
       </div>
 
       {/* 검증 설계 */}
-      <div className="grid gap-5 lg:grid-cols-3">
+      <div className="grid items-start gap-5 lg:grid-cols-3">
         <Card
           title={
             <span className="flex items-center gap-2">
@@ -228,7 +228,7 @@ export default function MetricsPage() {
       </Card>
 
       {/* 라이선스 */}
-      <div className="grid gap-5 lg:grid-cols-[1.4fr_1fr]">
+      <div className="grid items-start gap-5 lg:grid-cols-[1.4fr_1fr]">
         <Card
           title={
             <span className="flex items-center gap-2">
@@ -262,10 +262,10 @@ export default function MetricsPage() {
                   <td className="mono py-2 pr-2 text-[11.5px] text-[var(--ink-2)]">
                     {l.lic}
                   </td>
-                  <td className="py-2 pr-2">
+                  <td className="w-[46px] py-2 pr-2">
                     <span
                       className={[
-                        "rounded-[3px] border px-1.5 text-[10.5px] font-semibold",
+                        "inline-block whitespace-nowrap rounded-[3px] border px-1.5 text-[10.5px] font-semibold",
                         l.verdict === "채택"
                           ? "border-[var(--det)]/40 bg-[var(--det-bg)] text-[var(--det)]"
                           : "border-[var(--stamp)]/40 bg-[var(--stamp-bg)] text-[var(--stamp)]",

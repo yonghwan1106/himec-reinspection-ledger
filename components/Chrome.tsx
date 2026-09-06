@@ -70,7 +70,8 @@ export default function Chrome({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <div className="flex">
+      {/* 좌측 목록의 지면 색을 문서 전체 높이까지 깔아 둔다 (전체 캡처 시 흰 여백 방지) */}
+      <div className="flex md:bg-[linear-gradient(to_right,#ecebe4_0,#ecebe4_235px,#dfdcd2_235px,#dfdcd2_236px,var(--paper)_236px)]">
         <nav className="sticky top-11 hidden h-[calc(100vh-2.75rem)] w-[236px] shrink-0 overflow-y-auto border-r border-[var(--rule)] bg-[#ecebe4] px-3 py-4 md:block">
           <p className="px-2 pb-2 text-[11px] font-semibold tracking-wide text-[var(--ink-3)]">
             화면 5종

@@ -173,7 +173,7 @@ export default function LedgerPage() {
       </Card>
 
       {/* 선택된 사건 상세 */}
-      <div className="grid gap-5 xl:grid-cols-[1.4fr_1fr]">
+      <div className="grid items-start gap-5 xl:grid-cols-[1.4fr_1fr]">
         <Card
           tone={isBroken ? "stamp" : "sign"}
           title={

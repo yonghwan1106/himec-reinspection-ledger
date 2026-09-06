@@ -24,7 +24,7 @@ export default function OriginalPage() {
     >
       <Note kind="warn">{DISCLAIMER}</Note>
 
-      <div className="grid gap-5 xl:grid-cols-[1.15fr_1fr]">
+      <div className="grid items-start gap-5 xl:grid-cols-[1.15fr_1fr]">
         {/* 좌 : 스캔 원본 */}
         <Card
           tone="stamp"

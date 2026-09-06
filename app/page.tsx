@@ -110,7 +110,7 @@ export default function Home() {
         </div>
       </Card>
 
-      <div className="grid gap-5 lg:grid-cols-[1.35fr_1fr]">
+      <div className="grid items-start gap-5 lg:grid-cols-[1.35fr_1fr]">
         {/* 기존 방식 대 제안 방식 */}
         <Card title="무엇이 달라지는가">
           <table className="w-full border-collapse text-left">
@@ -233,7 +233,7 @@ function FlowDiagram() {
       x: 8,
       w: 138,
       label: "서명이 든 스캔",
-      sub: "검측요청·결과통보 / 시정지시 / 재검측",
+      sub: "검측요청 · 시정지시 · 재검측",
       fill: "#f4f2ec",
       stroke: "#c7c3b6",
       text: "#46484d",

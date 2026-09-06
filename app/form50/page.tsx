@@ -25,7 +25,7 @@ export default function Form50Page() {
     >
       <Note kind="warn">{DISCLAIMER}</Note>
 
-      <div className="grid gap-5 xl:grid-cols-[1.5fr_1fr]">
+      <div className="grid items-start gap-5 xl:grid-cols-[1.5fr_1fr]">
         {/* 서식 초안 */}
         <Card
           title={
@@ -117,10 +117,16 @@ export default function Form50Page() {
                     첨부 사진
                   </td>
                   <td className="border border-[var(--rule-2)] bg-[var(--unknown-bg)]/60 px-2 py-2 align-top">
-                    <p className="flex items-center gap-1.5 text-[12px] text-[var(--unknown)]">
-                      <FileWarning size={13} strokeWidth={2.2} />
-                      <b>미확인 — 채우지 않는다.</b> 현장 사진은 이 시스템의 입력이 아니다.
-                      담당자가 원본 철에서 직접 붙인다.
+                    <p className="flex items-start gap-1.5 text-[12px] leading-relaxed text-[var(--unknown)]">
+                      <FileWarning
+                        size={13}
+                        strokeWidth={2.2}
+                        className="mt-[3px] shrink-0"
+                      />
+                      <span>
+                        <b>미확인 — 채우지 않는다.</b> 현장 사진은 이 시스템의 입력이 아니다.
+                        담당자가 원본 철에서 직접 붙인다.
+                      </span>
                     </p>
                   </td>
                 </tr>
@@ -250,7 +256,7 @@ export default function Form50Page() {
           <Card title="대장이 본체이고 서식은 부산물이다" tone="stamp">
             <p className="text-[12.5px] leading-relaxed text-[var(--ink)]">
               발주청이 발주하는 건설공사의 건설사업관리 현장은 전국이 같은 칸을 쓴다. 민간 발주
-              현장에서는 대장의 다섯 칸이 그대로 남고 <b>출력만 계약이 정한 서식으로 바뀐다.</b>
+              현장에서는 대장의 다섯 칸이 그대로 남고 <b>출력만 계약이 정한 서식으로 바뀐다.</b>{" "}
               제목의 무게중심이 서식이 아니라 대장에 있는 이유가 이것이다.
             </p>
           </Card>
